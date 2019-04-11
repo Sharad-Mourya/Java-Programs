@@ -1,5 +1,6 @@
 package SortingArrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SortArrays {
@@ -9,7 +10,10 @@ public class SortArrays {
      // SortingArraysEx();
      // SumValuesOfArray();
      // removeElementFromArray();
-      maxAndMinValInArray();
+      //maxAndMinValInArray();
+     // secondLarElemInArray();
+     // arrayToArrayList();
+      listToArray();
   }
 
     public static void SortingArraysEx() {
@@ -78,6 +82,42 @@ public class SortArrays {
       }
       System.out.println("Max Value is" + max);
       System.out.println("Min Value is" + min);
+  }
+
+  public static void secondLarElemInArray(){
+      int arr[] ={1,3,2,6,9,2};
+      int largest=arr[0];
+      int secondLar=arr[0];
+
+      for (int num:arr){
+          if(num>largest){
+              secondLar=largest;
+              largest=num;
+                }
+      }
+      System.out.print(secondLar);
+  }
+
+  public static void arrayToArrayList(){
+      String[]  my_array = new String[] {"Python", "JAVA", "PHP",  "Perl", "C#", "C++"};
+      ArrayList<String>  list = new ArrayList<String>(Arrays.asList(my_array));
+      System.out.println(list);
+  }
+  public static void listToArray(){
+      ArrayList<String> list = new ArrayList<String>();
+
+      list.add("Python");
+      list.add("Java");
+      list.add("PHP");
+      String[]  my_array = new String[list.size()];
+
+      list.toArray(my_array);
+      System.out.print(Arrays.toString(my_array));
+      //or to print individual elements from array
+      for (String  string : my_array)
+      {
+          System.out.println(string);
+      }
   }
 
 
